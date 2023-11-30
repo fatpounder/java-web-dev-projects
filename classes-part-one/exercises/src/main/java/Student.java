@@ -15,6 +15,25 @@ public class Student {
 
         }
 
+        public static String getGradeLevel(int credits) {
+                if (credits <= 29){
+                        return "freshman";
+                } else if (credits <= 59){
+                        return "sophomore";
+                } else if (credits <= 89) {
+                        return "junior";
+                } else {
+                        return "senior";
+                }
+        }
+
+        public void addGrade(int courseCredits, double grade) {
+                double totalQualityScore = this.gpa * this.numberOfCredits;
+                totalQualityScore += courseCredits * grade;
+                this.numberOfCredits += courseCredits;
+                this.gpa = totalQualityScore/this.numberOfCredits;
+        }
+
         // Drop your getters and setters below for the Student class.
 
         public String getName() {
@@ -51,7 +70,28 @@ public class Student {
 
 
         // To instantiate the Student class, add your code to the main in the file, SchoolPractice.
+        public String toString() {
 
+                String studentReport = String.format("%s is a %s with %d credits and a GPA of %.2f", this.name, this.getGradeLevel(this.numberOfCredits), this.getNumberOfCredits(), this.getGpa());
+                return studentReport;
+        }
+
+        public boolean equals(Object toBeCompared) {
+                if (toBeCompared == this) {
+                        return true;
+                }
+
+                if (toBeCompared == null) {
+                        return false;
+                }
+
+                if (toBeCompared.getClass() != getClass()) {
+                        return false;
+                }
+
+                Student theStudent = (Student) toBeCompared;
+                return theStudent.getStudentId() == getStudentId();
+        }
 
 
 }
