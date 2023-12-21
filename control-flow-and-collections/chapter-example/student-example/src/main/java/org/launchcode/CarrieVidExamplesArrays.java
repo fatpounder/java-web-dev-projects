@@ -2,7 +2,7 @@ package org.launchcode;
 
 import java.util.Arrays;
 
-public class CarrieVidExamples {
+public class CarrieVidExamplesArrays {
     public static void main(String[] args) {
         //TODO: Declare an empty array named hobbits that can hold 8 elements of type String
         String[] hobbits = new String[8];
