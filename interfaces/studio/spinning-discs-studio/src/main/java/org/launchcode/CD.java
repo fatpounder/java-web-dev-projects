@@ -1,8 +1,18 @@
 package org.launchcode;
 
-public class CD {
-    // TODO: Implement your custom interface.
+public class CD extends BaseDisc {
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+
+    private static final CD discType = null;
+    private static final int spinRate = 50;
+    private boolean hasMusic;
+
+
+    public CD(int id, String name) {
+        super(id, name, String.valueOf(discType), spinRate);
+        this.hasMusic = hasMusic;
+        setDiscType(hasMusic ? "Yeah Tunes!" : "Nah Bro");
+    }
+
+
 }
